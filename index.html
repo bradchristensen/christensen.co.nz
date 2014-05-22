@@ -1,62 +1,61 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="./style.css" media="screen" />
-	<link rel="stylesheet" type="text/css" href="./print.css" media="print" />
+	<link rel="stylesheet" type="text/css" href="./style.css" />
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<script type="text/javascript" src="./jquery.js"></script>
-	<script type="text/javascript" src="./jquery.fancybox.js"></script>
 	<script type="text/javascript" src="./jquery.scrollto.js"></script>
 	<script type="text/javascript" src="./script.js"></script>
 	<title>Brad Christensen: designer, developer, geek</title>
 </head>
 <body>
-	<div id="page">
+	<ul id="map">
+		<li class="current"><a href="#landing">About me</a></li>
+		<li><a href="#contact">Contact me</a></li>
+		<li id="line"><span></span></li>
+	</ul>
 
-		<ul id="map">
-			<li class="current"><a href="#landing">About me</a></li>
-			<li><a href="#projects">Projects</a></li>
-			<li><a href="#portfolio">Design portfolio</a></li>
-			<li><a href="#services">Services</a></li>
-			<li><a href="#contact">Contact</a></li>
-			<li id="line"><span></span></li>
-		</ul>
+	<div class="slide" id="landing">
+		<div class="cell">
+			<div class="wrapper">
+				
+				<h1><span>I am</span> Brad Christensen</h1>
+				<h2>Designer, developer and geek</h2>
 
-		<div class="slide" id="landing">
-			<div class="cell">
-				<div class="wrapper">
-					
-					<h2>I am</h2>
-					<h1>Brad Christensen</h1>
-					<h2>designer, developer, geek</h2>
+				<h3>A little about me</h3>
+				
+				<p>I'm a fourth year <strong>computer science honours student</strong> at the University of Waikato in Hamilton, New Zealand. I moonlight as a <strong>front-end developer</strong> for <a href="http://kitemedia.co.nz">Kite Media</a>, a digital creative company based in Canterbury, and occasionally I am a <strong>print designer</strong> (or web architect) at <a href="http://haprint.com">H&amp;A Print</a> in Wanganui.</p>
 
-					<h3>A little about me</h3>
-					<p>I'm a Computer Science honours student at the University of Waikato in Hamilton, New Zealand, originally from Wanganui, where I am still an occasional graphic designer at <a href="http://haprint.com">H&amp;A Print</a>. I am currently working for the <a href="http://wand.net.nz">WAND network research group</a> on network visualisation. My main interests are in networking, web design and mobile software development.</p>
-					
-					<h3>And some of the things I like to do</h3>
-					<p>I craft pixel-perfect websites, design for printed and digital media and roll my own software from time to time. This website will show you some of the more interesting things I've worked on in the past few years (well, it's kind of like work).</p>
+				<p>Of course, I should really be spending all that time working on my honours project, which is in the area of Contiki-based IPv6 networking for wireless sensor networks and the Internet of Things.</p>
+				
+				<h3>Things I like to do</h3>
 
-					<hr />
+				<p>I craft pixel-perfect websites, design for printed and digital media and create my own software from time to time. I write clean, MVC-based sites and I like classic web technologies like jQuery, SASS, and the Apache/MySQL/PHP stack or Python's Pyramid/Pylons.</p>
 
-					<a href="#projects" class="down" title="My projects">Continue</a>
+				<p>Like <a href="http://wand.net.nz">most WAND members</a>, I enjoy <a href="http://curryfriday.com">a good curry</a> from time to time. Come and join us if you want to have a chat over excellent food in great company.</p>
 
-				</div>
+				<hr />
+
+				<a href="#contact" class="down" title="Get in touch with me">Get in touch</a>
+
 			</div>
 		</div>
-
-		<div class="slide" id="projects">
-		</div>
-
-		<div class="slide" id="portfolio">
-		</div>
-
-		<div class="slide" id="services">
-		</div>
-
-		<div class="slide" id="contact">
-		</div>
-
 	</div>
+
+	<div class="slide" id="contact">
+		<div class="cell">
+			<div class="wrapper">
+
+			<h1>Get in touch</h1>
+
+			<p>I enjoy bonding over metal/opera music and juicy TV shows like Dexter, House of Cards and Game of Thrones, but you're also welcome to get in touch with me if you want to talk business.</p>
+
+			<p><a href="mailto:brad@christensen.co.nz">brad@christensen.co.nz</a> / <a href="http://www.linkedin.com/profile/view?id=253191007">LinkedIn</a> / <a href="https://twitter.com/BradC">Twitter</a></p>
+
+			</div>
+		</div>
+	</div>
+
 </body>
 </html>

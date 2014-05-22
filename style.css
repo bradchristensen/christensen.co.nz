@@ -18,6 +18,7 @@ body {
 	height: 100%;
 }
 
+/*
 #page {
 	display: block;
 	left: 0px;
@@ -28,6 +29,7 @@ body {
 	width: 100%;
 	z-index: 0;
 }
+*/
 
 a {
 	color: #04486f;
@@ -57,8 +59,11 @@ strong {
 a.down {
 	background: url('./images/down.png') no-repeat center;
 	background-size: contain;
+	border: 10px solid transparent;
+	border-radius: 10px;
 	display: block;
 	height: 33px;
+	margin: 30px 0 0 -10px;
 	opacity: 0.5;
 	overflow: hidden;
 	text-indent: 100%;
@@ -68,16 +73,20 @@ a.down {
 a.down:hover {
 	opacity: 1;
 }
+a.down:active {
+	background-color: rgba(255, 255, 255, 0.2);
+}
 
 #map {
 	list-style: inside;
-	margin-top: -98px;
+	margin-top: -40px;
 	position: fixed;
 	right: 10px;
 	top: 50%;
 	/* Dirty hack for nice performance in Chrome */
 	-webkit-transform: translateZ(0);
 	transform: translateZ(0);
+	z-index: 100;
 }
 
 #map li {
@@ -129,16 +138,11 @@ a.down:hover {
 }
 
 .slide {
+	display: table;
+	height: 100%;
 	image-rendering: optimizeSpeed;
+	overflow: hidden;
 	width: 100%;
-	/* Chrome is slow at redrawing, so this helps it to animate smoothly */
-	-webkit-transition: background-position 0.2s;
-}
-
-.wrapper {
-	margin: 0 auto;
-	padding: 0 20px;
-	max-width: 1050px;
 }
 
 .cell {
@@ -146,11 +150,18 @@ a.down:hover {
 	vertical-align: middle;
 }
 
+.wrapper {
+	margin: 0 auto;
+	padding: 0 20px;
+	max-width: 1050px;
+	position: relative;
+}
+
 #landing {
-	background: #bdbcb4 url('./images/landing.jpg') no-repeat center;
+	background: #bdbcb4 url('./images/landing.jpg') no-repeat center fixed;
 	background-size: cover;
-	display: table;
-	overflow: hidden;
+	background-position: center 20%;
+	height: 100%;
 }
 
 #landing p {
@@ -162,18 +173,26 @@ a.down:hover {
 	padding: 0 1px;
 }
 
-#landing h1 {
-	color: #12172f;
+h1 {
 	font: normal 2.7em "Novecento Wide", Roboto, Arial, sans-serif;
 	line-height: 100%;
 	margin: -5px 0 10px -3px;
-	text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.5);
 	text-transform: uppercase;
 }
 
+#landing h1 {
+	color: #12172f;
+	text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.5);
+}
+
 #landing h2 {
-	color: #fffced;
 	font-size: 1.5em;
+	text-transform: lowercase;
+}
+
+#landing h2,
+#landing h1 span:first-child {
+	color: #fffced;
 	font-weight: 300;
 	letter-spacing: 0.8px;
 	line-height: 100%;
@@ -191,11 +210,54 @@ a.down:hover {
 	width: 510px;
 }
 
-#landing a.down {
-	margin: 30px 0 0;
+#contact {
+	color: #ccc;
 }
 
-#projects {
-	background: url('./images/ha.jpg') no-repeat center;
-	background-size: cover;
+#contact p {
+	color: #999;
+	max-width: 500px;
+}
+
+#contact a {
+	color: #ddd;
+}
+
+#contact a:hover {
+	color: #fff;
+}
+
+@media only screen and (max-height: 700px) {
+	.wrapper {
+		padding-bottom: 80px;
+		padding-top: 80px;
+	}
+}
+
+@media only screen and (max-width: 700px) {
+	#map {
+		display: none;
+	}
+
+	.slide {
+		display: block;
+		height: auto;
+	}
+
+	#landing {
+		background-position: 0 0;
+		height: auto;
+	}
+
+	.cell {
+		display: block;
+	}
+
+	#landing p, #landing h3 {
+		width: 100%;
+	}
+
+	.wrapper {
+		padding: 80px 20px;
+	}
 }
