@@ -1,0 +1,10 @@
+RewriteEngine On
+RewriteBase /
+
+RewriteRule ^crate$ http://crate.christensen.co.nz/ [NC,R=301,L]
+RewriteRule ^crate/(.*) http://crate.christensen.co.nz/$1 [NC,R=301,L]
+
+<FilesMatch "^README$">
+Order Deny,Allow
+Deny from all
+</FilesMatch>
