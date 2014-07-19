@@ -227,6 +227,10 @@ h1 {
 	color: #fff;
 }
 
+#contact small a {
+	color: inherit;
+}
+
 @media only screen and (max-height: 700px) {
 	.wrapper {
 		padding-bottom: 80px;
