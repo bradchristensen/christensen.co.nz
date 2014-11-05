@@ -4,6 +4,9 @@ RewriteBase /
 RewriteRule ^crate$ http://crate.christensen.co.nz/ [NC,R=301,L]
 RewriteRule ^crate/(.*) http://crate.christensen.co.nz/$1 [NC,R=301,L]
 
+RewriteRule ^themes$ http://crate.christensen.co.nz/themes/ [NC,R=301,L]
+RewriteRule ^themes/(.*) http://crate.christensen.co.nz/themes/$1 [NC,R=301,L]
+
 <FilesMatch "^README$">
 Order Deny,Allow
 Deny from all
