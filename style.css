@@ -56,6 +56,11 @@ strong {
 	font-weight: 600;
 }
 
+abbr {
+	border-bottom: 1px dotted #333;
+	cursor: help;
+}
+
 a.down {
 	background: url('./images/down.png') no-repeat center;
 	background-size: contain;
