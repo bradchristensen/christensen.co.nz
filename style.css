@@ -75,9 +75,6 @@ a.down:active {
 	position: fixed;
 	right: 10px;
 	top: 50%;
-	/* Dirty hack for nice performance in Chrome */
-	-webkit-transform: translateZ(0);
-	transform: translateZ(0);
 	z-index: 100;
 }
 
