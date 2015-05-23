@@ -1,0 +1,21 @@
+{
+  "name": "christensen.co.nz",
+  "version": "0.0.0",
+  "homepage": "https://github.com/bradchristensen/christensen.co.nz",
+  "authors": [
+    "Brad Christensen <brad@christensen.co.nz>"
+  ],
+  "description": "Brad Christensen's website",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "smooth-scroll": "https://github.com/cferdinandi/smooth-scroll.git#~5.3.7",
+    "requirejs": "~2.1.17"
+  }
+}

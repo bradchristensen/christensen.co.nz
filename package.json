@@ -1,0 +1,24 @@
+{
+  "name": "christensen.co.nz",
+  "version": "1.0.0",
+  "description": "Brad Christensen's website",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bradchristensen/christensen.co.nz.git"
+  },
+  "author": "Brad Christensen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bradchristensen/christensen.co.nz/issues"
+  },
+  "homepage": "https://github.com/bradchristensen/christensen.co.nz",
+  "dependencies": {
+    "bower-files": "^3.7.0",
+    "del": "^1.2.0",
+    "gulp": "^3.8.11",
+    "gulp-bower": "0.0.10",
+    "gulp-sass": "^2.0.1",
+    "gulp-sourcemaps": "^1.5.2",
+    "requirejs": "^2.1.17"
+  }
+}

@@ -4,19 +4,19 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="initial-scale=1">
 	<meta name="author" content="Brad Christensen">
-	<meta name="description" content="Computer science student at Waikato University, graphic designer for H&amp;A Print in Wanganui and web developer for Canterbury-based Kite Media.">
-	<meta name="keywords" content="Brad, Christensen, Waikato, computer science, student, graphic design, web development, front-end, H&amp;A Print, Kite Media, WAND, networking, Internet of Things, wireless sensor networks">
+	<meta name="description" content="Brad Christensen's little piece of the Internet.">
+	<meta name="keywords" content="Brad, Christensen, Waikato, computer science, student, graphic design, web development, front-end, Enlighten Designs, H&amp;A Print, Kite Media, WAND, networking, Internet of Things">
 
 	<title>Brad Christensen: designer, developer, geek</title>
 
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<link rel="stylesheet" href="./style.css">
+	<link rel="stylesheet" href="/static/css/app.css">
 </head>
 <body>
 	<ul class="map" id="map">
-		<li class="current"><a href="#landing">About me</a></li>
-		<li><a href="#contact">Contact me</a></li>
+		<li class="current"><a href="#landing" data-scroll>About me</a></li>
+		<li><a href="#contact" data-scroll>Contact me</a></li>
 		<li class="line"><span></span></li>
 	</ul>
 
@@ -39,7 +39,7 @@
 
 				<hr />
 
-				<a href="#contact" class="down" title="Get in touch with me">Get in touch</a>
+				<a href="#contact" data-scroll class="down" title="Get in touch with me">Get in touch</a>
 
 			</div>
 		</div>
@@ -54,6 +54,8 @@
 				<p>I enjoy bonding over <a href="//www.youtube.com/watch?v=zPonioDYnoY">metal/opera music</a> and juicy TV shows like Dexter, House of Cards and Game of Thrones, but you're also welcome to get in touch with me if you want to talk business.</p>
 
 				<p><a href="mailto:brad@christensen.co.nz" title="Email me">brad@christensen.co.nz</a></p>
+				
+				<!-- TODO: this is totally a list, not a paragraph -->
 				<p>
 					<a href="//www.linkedin.com/profile/view?id=253191007" title="Info for important people">LinkedIn</a> /
 					<a href="//twitter.com/BradC" title="Try not to take anything I say too seriously">Twitter</a> /
@@ -69,8 +71,8 @@
 		</div>
 	</div>
 
-	<script src="./jquery.js"></script>
-	<script src="./script.js"></script>
+	<script src="/static/scripts/vendor/require.js" data-main="static/scripts/main"></script>
+	<!--<script src="/static/scripts/dist/main.js" data-main="main"></script>-->
 
 	<script>
 	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
