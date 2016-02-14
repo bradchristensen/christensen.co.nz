@@ -129,7 +129,7 @@ gulp.task('js-lint', () => {
 
 // Compile LESS into minified CSS
 gulp.task('less', () => {
-    return gulp.src(src.styles)
+    return gulp.src(src.styles + '**/*.less')
         .pipe(plumber())
         .pipe(cache(stream => stream.pipe(less()), 'less'))
         .pipe(concat('app.min.css'))
