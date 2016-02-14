@@ -40,11 +40,7 @@ var dest = {
 var webpackCache = {};
 var webpackConfig = {
     context: path.resolve(__dirname, src.scripts),
-    entry: [
-        // First polyfill ES6 features, then load our app from the main.js entry point
-        'babel-polyfill',
-        './main'
-    ],
+    entry: ['./main'],
     output: {
         path: path.resolve(__dirname, dest.scripts),
         filename: 'app.js'
