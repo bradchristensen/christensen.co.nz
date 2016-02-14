@@ -217,6 +217,5 @@ pip-log.txt
 bower_components/
 node_modules/
 
-# Assuming we do everything all nice and bowery, we can safely exclude
-# vendor files from source control
-vendor/
+static/styles/
+static/scripts/
