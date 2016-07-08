@@ -1,14 +1,14 @@
-import 'analytics';
+import './analytics';
 import smoothScroll from 'smooth-scroll';
 
 smoothScroll.init();
 
-var mapListItems = document.getElementById('map').children;
-var slides = document.getElementsByClassName('slide');
+const mapListItems = document.getElementById('map').children;
+const slides = document.getElementsByClassName('slide');
 window.addEventListener('scroll', () => {
-    var currentSlide = -1;
+    let currentSlide = -1;
     Array.prototype.forEach.call(slides, (slide, i) => {
-        var bottom = slide.getBoundingClientRect().bottom;
+        const bottom = slide.getBoundingClientRect().bottom;
 
         if (currentSlide < 0 && bottom > window.innerHeight / 2) {
             currentSlide = i;

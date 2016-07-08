@@ -1,5 +1,3 @@
-'use strict';
-
 // Utility packages
 import gulp from 'gulp';
 import del from 'del';
@@ -27,23 +25,23 @@ import cssnano from 'gulp-cssnano';
 // Bundle and compress scripts (Webpack does most of the magic for us)
 import webpack from 'webpack';
 
-var src = {
+const src = {
     scripts: 'src/scripts/',
-    styles: 'src/styles/'
+    styles: 'src/styles/',
 };
-var dest = {
+const dest = {
     scripts: 'static/scripts/',
-    styles: 'static/styles/'
+    styles: 'static/styles/',
 };
 
 // Configure Webpack for bundling scripts
-var webpackCache = {};
-var webpackConfig = {
+const webpackCache = {};
+const webpackConfig = {
     context: path.resolve(__dirname, src.scripts),
     entry: ['./main'],
     output: {
         path: path.resolve(__dirname, dest.scripts),
-        filename: 'app.js'
+        filename: 'app.js',
     },
     module: {
         loaders: [
@@ -51,36 +49,36 @@ var webpackConfig = {
                 loader: 'babel-loader',
                 include: [
                     // Let all of our modules be loaded
-                    path.resolve(__dirname, src.scripts)
+                    path.resolve(__dirname, src.scripts),
                 ],
                 query: {
                     // Compile scripts with ES6 (ES2015)
-                    presets: ['es2015']
-                }
-            }
-        ]
+                    presets: ['es2015'],
+                },
+            },
+        ],
     },
     resolve: {
         // Use this as the base directory
-        root: path.resolve(__dirname, src.scripts)
+        root: path.resolve(__dirname, src.scripts),
     },
     // Output source maps embedded in the output (non-minified) file
     devtool: 'source-map',
     // Cache between subsequent builds ('gulp watch')
-    cache: webpackCache
+    cache: webpackCache,
 };
 
 // Copy webpackConfig and modify it to create production config
-var webpackProductionConfig = _.assign({}, _.cloneDeep(webpackConfig), {
+const webpackProductionConfig = _.assign({}, _.cloneDeep(webpackConfig), {
     devtool: undefined,
     output: _.assign({}, webpackConfig.output, {
-        filename: 'app.min.js'
+        filename: 'app.min.js',
     }),
     plugins: [
         new webpack.optimize.DedupePlugin(),
-        new webpack.optimize.UglifyJsPlugin()
+        new webpack.optimize.UglifyJsPlugin(),
     ],
-    cache: {}
+    cache: {},
 });
 
 // Delete generated files
@@ -89,16 +87,16 @@ gulp.task('clean', () => {
     // this one holds up the queue until everything is completely deleted, without needing
     // to return a promise or call a callback to signal when complete
     del.sync([
-        dest.scripts + '**/*',
-        dest.styles + '**/*'
+        `${dest.scripts}**/*`,
+        `${dest.styles}**/*`,
     ]);
 });
 
 // Bundle scripts using Webpack
 gulp.task('js-dev', callback => {
-    webpack(webpackConfig, (err, stats) => {
+    webpack(webpackConfig, err => {
         if (err) {
-            console.error('webpack: ' + (err.message || err));
+            console.error(`webpack: ${err.message || err}`);
         }
         callback();
     });
@@ -107,31 +105,34 @@ gulp.task('js-dev', callback => {
 // Output a compressed build of the scripts bundle for use in production
 // TODO: make this only happen when built using TeamCity?
 gulp.task('js-prod', callback => {
-    webpack(webpackProductionConfig, (err, stats) => {
+    webpack(webpackProductionConfig, err => {
         if (err) {
-            throw new Error('webpack: ' + (err.message || err));
+            throw new Error(`webpack: ${err.message || err}`);
         }
         callback();
     });
 });
 
 // Check scripts for syntax and formatting errors
-gulp.task('js-lint', () => {
-    return gulp.src(src.scripts)
-    .pipe(plumber())
-    .pipe(eslint())
-    .pipe(eslint.format());
-});
+gulp.task('js-lint', () =>
+    gulp.src([
+        `!${src.scripts}analytics.js`,
+        `${src.scripts}**/*.js`,
+    ])
+        .pipe(plumber())
+        .pipe(eslint())
+        .pipe(eslint.format())
+);
 
 // Compile LESS into minified CSS
-gulp.task('less', () => {
-    return gulp.src(src.styles + '**/*.less')
+gulp.task('less', () =>
+    gulp.src(`${src.styles}**/*.less`)
         .pipe(plumber())
         .pipe(cache(stream => stream.pipe(less()), 'less'))
         .pipe(concat('app.min.css'))
         .pipe(cssnano()) // minify
-        .pipe(gulp.dest(dest.styles));
-});
+        .pipe(gulp.dest(dest.styles))
+);
 
 // Run 'gulp watch' on the command line to automatically trigger rebuilds
 // when files in the watched directories change
