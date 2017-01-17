@@ -35,7 +35,6 @@ const dest = {
 };
 
 // Configure Webpack for bundling scripts
-const webpackCache = {};
 const webpackConfig = {
     context: path.resolve(__dirname, src.scripts),
     entry: ['./main'],
@@ -64,8 +63,6 @@ const webpackConfig = {
     },
     // Output source maps embedded in the output (non-minified) file
     devtool: 'source-map',
-    // Cache between subsequent builds ('gulp watch')
-    cache: webpackCache,
 };
 
 // Copy webpackConfig and modify it to create production config
@@ -78,7 +75,6 @@ const webpackProductionConfig = _.assign({}, _.cloneDeep(webpackConfig), {
         new webpack.optimize.DedupePlugin(),
         new webpack.optimize.UglifyJsPlugin(),
     ],
-    cache: {},
 });
 
 // Delete generated files
@@ -138,8 +134,8 @@ gulp.task('less', () =>
 // when files in the watched directories change
 gulp.task('watch', ['js-dev', 'less'], () => {
     // Don't build the bundle for prod, only the non-uglified dev bundle
-    gulp.watch(src.scripts, ['js-lint', 'js-dev']);
-    gulp.watch(src.styles, ['less']);
+    gulp.watch(`${src.scripts}**/*.js`, ['js-lint', 'js-dev']);
+    gulp.watch(`${src.styles}**/*.less`, ['less']);
 });
 
 gulp.task('default', ['js-lint', 'js-dev', 'js-prod', 'less']);

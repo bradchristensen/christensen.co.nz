@@ -12,6 +12,11 @@
     "url": "https://github.com/bradchristensen/christensen.co.nz/issues"
   },
   "homepage": "https://github.com/bradchristensen/christensen.co.nz",
+  "dependencies": {
+    "promise-polyfill": "^6.0.2",
+    "smooth-scroll": "git+https://github.com/cferdinandi/smooth-scroll.git#6437993dad979dd296c037a3cdde66cbf37d98ec",
+    "whatwg-fetch": "^2.0.1"
+  },
   "devDependencies": {
     "babel-core": "^6.10.4",
     "babel-eslint": "^6.1.0",
@@ -32,7 +37,6 @@
     "gulp-eslint": "^3.0.1",
     "gulp-less": "^3.1.0",
     "gulp-plumber": "^1.1.0",
-    "smooth-scroll": "git+https://github.com/cferdinandi/smooth-scroll.git#6437993dad979dd296c037a3cdde66cbf37d98ec",
     "webpack": "^1.13.1"
   },
   "babel": {
