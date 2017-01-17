@@ -89,8 +89,8 @@ gulp.task('clean', () => {
 });
 
 // Bundle scripts using Webpack
-gulp.task('js-dev', callback => {
-    webpack(webpackConfig, err => {
+gulp.task('js-dev', (callback) => {
+    webpack(webpackConfig, (err) => {
         if (err) {
             console.error(`webpack: ${err.message || err}`);
         }
@@ -100,8 +100,8 @@ gulp.task('js-dev', callback => {
 
 // Output a compressed build of the scripts bundle for use in production
 // TODO: make this only happen when built using TeamCity?
-gulp.task('js-prod', callback => {
-    webpack(webpackProductionConfig, err => {
+gulp.task('js-prod', (callback) => {
+    webpack(webpackProductionConfig, (err) => {
         if (err) {
             throw new Error(`webpack: ${err.message || err}`);
         }
@@ -117,7 +117,7 @@ gulp.task('js-lint', () =>
     ])
         .pipe(plumber())
         .pipe(eslint())
-        .pipe(eslint.format())
+        .pipe(eslint.format()),
 );
 
 // Compile LESS into minified CSS
@@ -127,7 +127,7 @@ gulp.task('less', () =>
         .pipe(cache(stream => stream.pipe(less()), 'less'))
         .pipe(concat('app.min.css'))
         .pipe(cssnano()) // minify
-        .pipe(gulp.dest(dest.styles))
+        .pipe(gulp.dest(dest.styles)),
 );
 
 // Run 'gulp watch' on the command line to automatically trigger rebuilds

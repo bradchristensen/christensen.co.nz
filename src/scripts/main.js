@@ -1,7 +1,7 @@
+import smoothScroll from 'smooth-scroll';
+
 import './polyfills';
 import './analytics';
-
-import smoothScroll from 'smooth-scroll';
 
 smoothScroll.init();
 
@@ -18,7 +18,7 @@ window.addEventListener('scroll', () => {
     });
 
     if (currentSlide >= 0) {
-        Array.prototype.forEach.call(mapListItems, li => {
+        Array.prototype.forEach.call(mapListItems, (li) => {
             li.classList.remove('current');
         });
         mapListItems[currentSlide].classList.add('current');
@@ -30,9 +30,9 @@ window.addEventListener('scroll', () => {
 // in the production environment. I wouldn't worry. This probably won't last long.
 fetch('https://christensen.co.nz/api/duolingo/bradchristensen')
     .then(response => response.json())
-    .then(json => {
+    .then(({ site_streak }) => {
         // parseInt to eliminate any potential for Duolingo to inadvertently XSS me
-        const streakNumDays = parseInt(json.site_streak, 10) || 0;
+        const streakNumDays = parseInt(site_streak, 10) || 0;
         const duolingoParaStatic = document.getElementById('duolingo-para-static');
 
         const howBonkersIsThat = streakNumDays > 50 ?
