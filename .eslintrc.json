@@ -8,7 +8,7 @@
     "import/no-extraneous-dependencies": [
       "error",
       {
-        "devDependencies": ["gulpfile.babel.js"]
+        "devDependencies": ["webpack.server.js", "src/setupProxy.js"]
       }
     ],
     "prettier/prettier": ["error"]

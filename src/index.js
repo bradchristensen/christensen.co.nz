@@ -28,13 +28,11 @@ window.addEventListener("scroll", () => {
 });
 
 // Connect to the reverse-proxied Duolingo API, without running into CORS issues.
-// One day I will regret fetching an absolute URL, but for now this reverse proxy only exists
-// in the production environment. I wouldn't worry. This probably won't last long.
-fetch("https://christensen.co.nz/api/duolingo/bradchristensen")
+fetch("/.netlify/functions/duolingo")
   .then(response => response.json())
-  .then(({ site_streak: siteStreak }) => {
+  .then(({ streak }) => {
     // parseInt to eliminate any potential for Duolingo to inadvertently XSS me
-    const streakNumDays = parseInt(siteStreak, 10) || 0;
+    const streakNumDays = parseInt(streak, 10) || 0;
     const duolingoParaStatic = document.getElementById("duolingo-para-static");
 
     const howBonkersIsThat =
