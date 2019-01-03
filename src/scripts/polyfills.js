@@ -1,6 +1,6 @@
-import 'whatwg-fetch';
-import Promise from 'promise-polyfill';
+import "whatwg-fetch";
+import Promise from "promise-polyfill";
 
 if (!window.Promise) {
-    window.Promise = Promise;
+  window.Promise = Promise;
 }
