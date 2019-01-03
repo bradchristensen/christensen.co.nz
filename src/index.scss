@@ -1,5 +1,12 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600");
 
+@font-face {
+  font-family: "Novecento Wide";
+  src: url("./fonts/Novecento-Wide-Light.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
   border: none;
   margin: 0;
@@ -59,7 +66,7 @@ h1 {
 }
 
 a.down {
-  background: url("../images/down.png") no-repeat center;
+  background: url("./images/down.png") no-repeat center;
   background-size: contain;
   border: 10px solid transparent;
   border-radius: 10px;
@@ -159,7 +166,7 @@ a.down {
 }
 
 .landing {
-  background: #bdbcb4 url("../images/landing.jpg") no-repeat center fixed;
+  background: #bdbcb4 url("./images/landing.jpg") no-repeat center fixed;
   background-size: cover;
   background-position: center 20%;
   height: 100%;

@@ -1,3 +1,5 @@
+import "./index.scss";
+
 import smoothScroll from "smooth-scroll";
 
 import "./polyfills";

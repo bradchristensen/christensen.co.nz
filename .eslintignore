@@ -1,5 +1,5 @@
 node_modules/
-src/scripts/analytics.js
+src/analytics.js
 /static/scripts
 /static/styles
 !.babelrc.js
