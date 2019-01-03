@@ -1,6 +1,5 @@
 node_modules/
-src/analytics.js
-/static/scripts
-/static/styles
+build/
+/lambda
 !.babelrc.js
 !.eslintrc.js
