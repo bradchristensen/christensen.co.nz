@@ -1,12 +1,16 @@
 {
-    "env": {
-        "browser": true
-    },
-    "extends": "airbnb",
-    "rules": {
-        "import/no-extraneous-dependencies": ["error", {
-            "devDependencies": ["gulpfile.babel.js"]
-        }],
-        "indent": ["error", 4]
-    }
+  "env": {
+    "browser": true
+  },
+  "extends": ["airbnb-base", "prettier"],
+  "plugins": ["prettier"],
+  "rules": {
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": ["webpack.server.js", "src/setupProxy.js"]
+      }
+    ],
+    "prettier/prettier": ["error"]
+  }
 }

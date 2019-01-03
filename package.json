@@ -11,38 +11,57 @@
   "bugs": {
     "url": "https://github.com/bradchristensen/christensen.co.nz/issues"
   },
-  "homepage": "https://github.com/bradchristensen/christensen.co.nz",
+  "browserslist": [
+    "last 3 versions",
+    "Firefox ESR",
+    "ie 11",
+    "not ie <= 10"
+  ],
+  "scripts": {
+    "build": "run-p build:**",
+    "build:app": "react-scripts build",
+    "build:lambda": "netlify-lambda build src/lambda",
+    "lint": "eslint --ext .js .",
+    "start": "run-p start:**",
+    "start:app": "react-scripts start",
+    "start:lambda": "netlify-lambda serve src/lambda -c webpack.server.js",
+    "test": "npm run lint"
+  },
   "dependencies": {
+    "isomorphic-fetch": "^2.2.1",
     "promise-polyfill": "^6.0.2",
-    "smooth-scroll": "git+https://github.com/cferdinandi/smooth-scroll.git#6437993dad979dd296c037a3cdde66cbf37d98ec",
-    "whatwg-fetch": "^2.0.1"
+    "smooth-scroll": "git+https://github.com/cferdinandi/smooth-scroll.git#6437993dad979dd296c037a3cdde66cbf37d98ec"
   },
   "devDependencies": {
-    "babel-core": "^6.10.4",
-    "babel-eslint": "^6.1.0",
-    "babel-loader": "^6.2.4",
-    "babel-polyfill": "^6.9.1",
-    "babel-preset-es2015": "^6.9.0",
-    "babel-register": "^6.9.0",
-    "del": "^2.2.1",
-    "eslint": "^3.13.1",
-    "eslint-config-airbnb": "^14.0.0",
-    "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-jsx-a11y": "^3.0.2",
-    "eslint-plugin-react": "^6.9.0",
-    "gulp": "^3.9.1",
-    "gulp-cache-stream": "^1.0.3",
-    "gulp-concat": "^2.6.0",
-    "gulp-cssnano": "^2.1.2",
-    "gulp-eslint": "^3.0.1",
-    "gulp-less": "^3.1.0",
-    "gulp-plumber": "^1.1.0",
-    "lodash": "^4.17.4",
-    "webpack": "^1.13.1"
+    "babel-loader": "^8.0.4",
+    "eslint": "^5.6.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^3.3.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-prettier": "^3.0.1",
+    "http-proxy-middleware": "^0.19.1",
+    "husky": "^1.3.1",
+    "lint-staged": "^8.1.0",
+    "netlify-lambda": "^1.1.1",
+    "node-sass": "^4.11.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^1.15.3",
+    "react-scripts": "^2.1.2"
   },
-  "babel": {
-    "presets": [
-      "es2015"
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{json,css,scss,less,md,yml,yaml}": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.{js,jsx,ts,tsx}": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
     ]
   }
 }
