@@ -20,7 +20,7 @@ window.addEventListener("scroll", () => {
   });
 
   if (currentSlide >= 0) {
-    Array.prototype.forEach.call(mapListItems, li => {
+    Array.prototype.forEach.call(mapListItems, (li) => {
       li.classList.remove("current");
     });
     mapListItems[currentSlide].classList.add("current");
@@ -29,7 +29,7 @@ window.addEventListener("scroll", () => {
 
 // Connect to the reverse-proxied Duolingo API, without running into CORS issues.
 fetch("/.netlify/functions/duolingo")
-  .then(response => response.json())
+  .then((response) => response.json())
   .then(({ streak }) => {
     // parseInt to eliminate any potential for Duolingo to inadvertently XSS me
     const streakNumDays = parseInt(streak, 10) || 0;
