@@ -3,3 +3,4 @@ build/
 /lambda
 !.babelrc.js
 !.eslintrc.js
+analytics.js

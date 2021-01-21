@@ -2,7 +2,12 @@
   "env": {
     "browser": true
   },
-  "extends": ["airbnb-base", "prettier"],
+  "extends": [
+    "plugin:@shopify/esnext",
+    "plugin:@shopify/webpack",
+    "prettier",
+    "prettier/babel"
+  ],
   "plugins": ["prettier"],
   "rules": {
     "import/no-extraneous-dependencies": [
@@ -11,6 +16,16 @@
         "devDependencies": ["webpack.server.js", "src/setupProxy.js"]
       }
     ],
+    "no-console": "off",
     "prettier/prettier": ["error"]
-  }
+  },
+  "overrides": [
+    {
+      "files": ["setupProxy.js", "lambda/**", "webpack.*.js"],
+      "env": {
+        "browser": false,
+        "node": true
+      }
+    }
+  ]
 }

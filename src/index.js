@@ -43,17 +43,18 @@ fetch("/.netlify/functions/duolingo")
     const duoLink =
       '<a href="https://www.duolingo.com/bradchristensen">Duolingo streak</a>';
     const html =
+      // Hopefully this is never the case...
       streakNumDays === 0
-        ? // Hopefully this is never the case...
-          `<p>I've lost my ${duoLink}. I am a disappointment to my family.</p>`
+        ? `<p>I've lost my ${duoLink}. I am a disappointment to my family.</p>`
         : `
-            <p>
-                My current Duolingo streak is
-                <strong><a href="https://www.duolingo.com/bradchristensen">${daysText}</a></strong>.
-                <nobr>${howBonkersIsThat}</nobr>
-            </p>
+          <p>
+            My current Duolingo streak is
+            <strong><a href="https://www.duolingo.com/bradchristensen">${daysText}</a></strong>.
+            <nobr>${howBonkersIsThat}</nobr>
+          </p>
         `;
 
     duolingoParaStatic.insertAdjacentHTML("afterend", html);
     document.getElementById("duolingo-uphill-battle").innerHTML = "";
-  });
+  })
+  .catch((err) => console.error(err));
