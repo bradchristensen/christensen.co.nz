@@ -28,6 +28,7 @@
     "test": "yarn lint"
   },
   "dependencies": {
+    "encoding": "^0.1.13",
     "isomorphic-fetch": "^3.0.0",
     "promise-polyfill": "^8.2.0",
     "smooth-scroll": "git+https://github.com/cferdinandi/smooth-scroll.git#6437993dad979dd296c037a3cdde66cbf37d98ec"
