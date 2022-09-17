@@ -25,14 +25,10 @@ function App() {
     <>
       <ul class="map">
         <li className={currentSlide === 0 ? "current" : undefined}>
-          <a href="#landing" data-scroll>
-            About me
-          </a>
+          <a href="#landing">About me</a>
         </li>
         <li className={currentSlide === 1 ? "current" : undefined}>
-          <a href="#contact" data-scroll>
-            Contact me
-          </a>
+          <a href="#contact">Contact me</a>
         </li>
         <li class="line">
           <span />
@@ -42,12 +38,18 @@ function App() {
       <div class="slide landing" id="landing">
         <div class="cell">
           <div class="wrapper">
-            <h1>
-              <span className="highlight">I&rsquo;m</span> Brad Christensen
-            </h1>
-            <h2>Your friend and software engineer</h2>
+            <h2>Kia ora, I&rsquo;m</h2>
+            <h1>Brad Christensen</h1>
+            <h2>Software engineer &amp; technical leader</h2>
 
             <h3>A little about me</h3>
+
+            <p>
+              I craft pixel-perfect websites and mobile experiences, and I
+              create the rock-solid Cloud infrastructure that powers them. I
+              love being involved in every aspect of bringing products and
+              solutions to life, and empowering teams to do their best work.
+            </p>
 
             <p>
               I am leading development of our mobile and web platforms as{" "}
@@ -65,6 +67,21 @@ function App() {
             </p>
 
             <p>
+              My <a href="https://virscient.com/">Virscient</a> colleague and
+              ex-flatmate, Richard, and I once competed for the longest Duolingo
+              streak in{" "}
+              <a href="https://www.youtube.com/watch?v=5Q-qzjM3PWc">Russian</a>.{" "}
+              <span className={classes.nobr}>We agreed</span> to call it quits
+              after{" "}
+              <a href="https://www.duolingo.com/profile/bradchristensen">
+                400 days
+              </a>
+              .
+            </p>
+
+            <h3>My background</h3>
+
+            <p>
               Previously I was a <strong>Software Engineering Manager</strong>{" "}
               at{" "}
               <a href="https://www.lic.co.nz">
@@ -73,9 +90,9 @@ function App() {
               , where my team worked on{" "}
               <a href="https://www.lic.co.nz/products-and-services/minda/minda-live/">
                 MINDA Live
-              </a>
-              , a web application that dairy farmers use to record and access
-              information about their herd and animals.
+              </a>{" "}
+              &mdash; the app that dairy farmers use nationwide to record and
+              access information about their herd and animals.
             </p>
 
             <p>
@@ -89,44 +106,13 @@ function App() {
                   <strong>H&amp;A Print</strong>
                 </a>
               </span>{" "}
-              in Whanganui &mdash; I still maintain their website today. At
-              Waikato University, I wrote my honours thesis on{" "}
+              in Whanganui, whose website I still maintain today. I also wrote
+              an honours thesis on{" "}
               <a href="https://secure.wand.net.nz/~bec5/honours-thesis.pdf">
                 IPv6 networking for the Internet of Things
-              </a>
-              .
+              </a>{" "}
+              when I studied at the University of Waikato.
             </p>
-
-            <h3>Things I like to do</h3>
-
-            <p>
-              I craft pixel-perfect websites using a variety of modern
-              technologies,{" "}
-              <span className={classes.nobr}>and I love to be involved</span> in
-              every aspect of bringing them to life.
-            </p>
-
-            <p>
-              My flatmate and I once competed for the longest Duolingo streak in{" "}
-              <a href="https://www.youtube.com/watch?v=5Q-qzjM3PWc">Russian</a>.{" "}
-              <span className={classes.nobr}>We agreed</span> to call it quits
-              after{" "}
-              <a href="https://www.duolingo.com/profile/bradchristensen">
-                400 days
-              </a>
-              .
-            </p>
-
-            <hr />
-
-            <a
-              href="#contact"
-              data-scroll
-              class="down"
-              title="Get in touch with me"
-            >
-              Get in touch
-            </a>
           </div>
         </div>
       </div>
@@ -146,7 +132,7 @@ function App() {
               <span className={classes.nobr}>Game of Thrones</span>, but you're
               also welcome to <span className={classes.nobr}>get in touch</span>{" "}
               <span className={classes.nobr}>with me</span> if you want to talk
-              business.
+              business!
             </p>
 
             <p>
@@ -157,6 +143,7 @@ function App() {
 
             {/* TODO: this is totally a list, not a paragraph */}
             <p>
+              Find me on:{" "}
               <a
                 href="https://www.linkedin.com/in/bradchristensennz"
                 title="Info for important people"
@@ -177,13 +164,6 @@ function App() {
               >
                 GitHub
               </a>
-            </p>
-
-            <p>
-              <small>
-                Photo:{" "}
-                <a href="https://louisehutt.com">Louise Hutt Photography</a>
-              </small>
             </p>
           </div>
         </div>
