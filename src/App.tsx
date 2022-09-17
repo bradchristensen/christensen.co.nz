@@ -43,7 +43,7 @@ function App() {
         <div class="cell">
           <div class="wrapper">
             <h1>
-              <span>I am</span> Brad Christensen
+              <span className="highlight">I&rsquo;m</span> Brad Christensen
             </h1>
             <h2>Your friend and software engineer</h2>
 
