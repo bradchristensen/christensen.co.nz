@@ -1,3 +1,4 @@
+@use "sass:color";
 @import "styles/fonts";
 
 * {
@@ -5,7 +6,6 @@
   margin: 0;
   outline: none;
   padding: 0;
-  text-decoration: none;
 }
 
 html {
@@ -26,11 +26,11 @@ body {
 
 a {
   color: #04486f;
-  transition: all 0.2s;
+  text-underline-offset: 1.5px;
+  transition: all 0.1s;
 
   &:hover {
-    color: #f44;
-    text-decoration: underline;
+    color: color.adjust(#04486f, $lightness: 20%);
   }
 
   &:active {
@@ -58,70 +58,13 @@ h1 {
   margin: -5px 0 10px -3px;
 }
 
-.map {
-  list-style: inside;
-  margin-top: -40px;
-  position: fixed;
-  right: 10px;
-  top: 50%;
-  z-index: 100;
-
-  li {
-    color: #000;
-    direction: rtl;
-    height: 20px;
-    overflow: hidden;
-    padding: 10px;
-    text-align: right;
-    white-space: nowrap;
-
-    a {
-      opacity: 0;
-      padding-right: 40px;
-      position: relative;
-      right: -30px;
-      vertical-align: 1px;
-    }
-
-    a:hover,
-    &.current,
-    &.current a {
-      color: #000;
-      opacity: 1;
-    }
-
-    &.line {
-      box-sizing: border-box;
-      height: 100%;
-      list-style: none;
-      padding: 18px 0 17px;
-      position: absolute;
-      right: 13.5px;
-      top: 0px;
-      z-index: -1;
-
-      span {
-        border-right: 1px solid rgba(0, 0, 0, 0.3);
-        display: block;
-        height: 100%;
-      }
-    }
-  }
-
-  &:hover li a {
-    opacity: 1;
-  }
-}
-
 .slide {
   display: flex;
   justify-content: center;
+  margin: 0 auto;
+  max-width: 1600px;
   overflow: hidden;
   padding: 8rem 0;
-  width: 100%;
-}
-
-.cell {
   width: 100%;
 }
 
@@ -132,71 +75,6 @@ h1 {
   position: relative;
 }
 
-.landing {
-  background: #cacaca url("./images/brad.jpg") no-repeat center;
-  background-size: cover;
-  height: 100%;
-  margin: 0 auto;
-  max-width: 1600px;
-  padding: 0;
-
-  .cell {
-    padding: 8rem 0;
-  }
-
-  p {
-    line-height: 160%;
-    width: 490px;
-
-    span {
-      padding: 0 1px;
-    }
-  }
-
-  h1 {
-    color: #12172f;
-    font-weight: 900;
-    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.5);
-    width: 510px;
-  }
-
-  h2 {
-    font-family: Satoshi;
-    font-size: 1.5em;
-    width: 510px;
-  }
-
-  h2,
-  .highlight {
-    color: #fff;
-    letter-spacing: 0.8px;
-    line-height: 120%;
-    padding-bottom: 10px;
-    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.25);
-  }
-
-  h2 {
-    font-weight: 300;
-  }
-
-  h3 {
-    color: #12172f;
-    font-family: Satoshi;
-    font-size: 1.2em;
-    font-weight: 700;
-    line-height: 150%;
-    margin: 30px 0 0;
-    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
-    width: 510px;
-  }
-}
-
-.contact {
-  p {
-    max-width: 500px;
-  }
-}
-
 @media only screen and (max-height: 700px) {
   .wrapper {
     padding-bottom: 80px;
@@ -205,29 +83,9 @@ h1 {
 }
 
 @media only screen and (max-width: 700px) {
-  .map {
-    display: none;
-  }
-
   .slide {
     display: block;
     height: auto;
-  }
-
-  .landing {
-    background-image: none;
-    height: auto;
-
-    p,
-    h1,
-    h2,
-    h3 {
-      width: 100%;
-    }
-  }
-
-  .cell {
-    display: block;
   }
 
   .wrapper {
