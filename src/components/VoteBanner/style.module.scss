@@ -1,0 +1,45 @@
+.banner {
+  margin: 0 auto;
+  max-width: 1600px;
+
+  a {
+    align-items: center;
+    background-color: #e55;
+    box-sizing: border-box;
+    color: #fff;
+    display: flex;
+    font-weight: bold;
+    gap: 0.5rem;
+    justify-content: center;
+    padding: 1rem 0.5rem;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 1px 1px 0 #c00;
+    width: 100%;
+  }
+
+  a:hover {
+    background-color: #d55;
+
+    .btn {
+      background-color: #fff;
+      color: #e55;
+      text-shadow: none;
+    }
+  }
+}
+
+.btn {
+  border: 1px solid #fff;
+  border-radius: 2rem;
+  display: flex;
+  margin: 0 0.5rem;
+  padding: 0.5rem 1rem;
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 500px) {
+  .banner a {
+    flex-direction: column;
+  }
+}
