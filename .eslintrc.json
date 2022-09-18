@@ -1,31 +1,15 @@
 {
+  "$schema": "http://json.schemastore.org/eslintrc",
   "env": {
     "browser": true
   },
   "extends": [
-    "plugin:@shopify/esnext",
-    "plugin:@shopify/webpack",
-    "prettier",
-    "prettier/babel"
+    "plugin:@shopify/typescript",
+    "plugin:@shopify/typescript-type-checking",
+    "plugin:@shopify/react",
+    "prettier"
   ],
-  "plugins": ["prettier"],
   "rules": {
-    "import/no-extraneous-dependencies": [
-      "error",
-      {
-        "devDependencies": ["webpack.server.js", "src/setupProxy.js"]
-      }
-    ],
-    "no-console": "off",
-    "prettier/prettier": ["error"]
-  },
-  "overrides": [
-    {
-      "files": ["setupProxy.js", "lambda/**", "webpack.*.js"],
-      "env": {
-        "browser": false,
-        "node": true
-      }
-    }
-  ]
+    "no-console": "off"
+  }
 }
