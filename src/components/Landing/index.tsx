@@ -21,15 +21,15 @@ function Landing() {
           <p>
             I am leading development of our mobile and web platforms as{" "}
             <strong className={classes.nobr}>Head of Product</strong> at{" "}
-            <a href="https://smoothsensors.io" className={classes.nobr}>
-              <strong>Smooth Sensors</strong>
+            <a href="https://www.airsuite.com" className={classes.nobr}>
+              <strong>AirSuite</strong>
             </a>
             , where we monitor indoor environment quality to create healthy and
             comfortable spaces for learning, working and living.
           </p>
 
           <p>
-            A few years ago, my <a href="https://virscient.com/">Virscient</a>{" "}
+            A few years ago, my <a href="https://virscient.com">Virscient</a>{" "}
             colleague and ex-flatmate, Richard, and I challenged each other to
             learn{" "}
             <a href="https://www.youtube.com/watch?v=5Q-qzjM3PWc">Russian</a>.{" "}
@@ -59,7 +59,7 @@ function Landing() {
 
           <p>
             I wrote my honours thesis on{" "}
-            <a href="https://secure.wand.net.nz/~bec5/honours-thesis.pdf">
+            <a href="https://web.archive.org/web/20160130060823/https://secure.wand.net.nz/sites/default/files/Thesis%202014-10-21%2022-02.pdf">
               IPv6 networking for the Internet of Things
             </a>{" "}
             when I studied at the University of Waikato. During my student
